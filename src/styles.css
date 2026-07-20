@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --cream: #f7f3ea;
+  --sage: #8fa68e;
+  --seashell: #e7cfc9;
+  --powder-blue: #a8c4d6;
+
+  --ink: #262824;
+  --muted-ink: #686b64;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button, a {
+  font: inherit;
+}

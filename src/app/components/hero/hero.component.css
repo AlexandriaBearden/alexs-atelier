@@ -1,0 +1,150 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 40%);
+  align-items: center;
+  min-height: 100vh;
+  padding: 8rem 4rem 4rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.collection-label {
+  margin: 0 0 1.5rem;
+  color: var(--muted-ink);
+  font-size: 0.72rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.hero-description {
+  max-width: 570px;
+  margin: 2rem 0;
+  color: var(--muted-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.6;
+}
+
+.tour-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.14rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.tour-link span {
+  transition: transform 180ms ease;
+}
+
+.tour-link:hover span, .tour-link:focus-visible span {
+  transform: translateY(0.3rem);
+}
+
+.plumbob {
+  position: relative;
+  width: 34px;
+  height: 62px;
+  margin-bottom: 2rem;
+}
+
+.plumbob-top, .plumbob-bottom {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  background-color: var(--sage);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.plumbob-top {
+  top: 5px;
+}
+
+.plumbob-bottom {
+  bottom: 5px;
+}
+
+.plumbob::after {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 22px;
+  height: 30px;
+  background-color: var(--cream);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.coastal-window {
+  position: relative;
+  min-height: 68vh;
+  border-radius: 18rem 18rem 0 0;
+  overflow: hidden;
+  background-color: var(--powder-blue);
+}
+
+.sky {
+  position: absolute;
+  inset: 0 0 45%;
+  background-color: #c9dce6;
+}
+
+.ocean {
+  position: absolute;
+  inset: 55% 0 0;
+  background-color: #8fb2c4;
+}
+
+.sunlight {
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  width: 35%;
+  height: 120%;
+  background-color: rgba(255, 255, 255, 0.28);
+  transform: rotate(12deg);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 8rem 1.5rem 2rem;
+  }
+
+  .coastal-window {
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: clamp(3.6rem, 18vw, 5rem);
+  }
+
+  .coastal-window {
+    min-height: 340px;
+    border-radius: 10rem 10rem 0 0;
+  }
+}
