@@ -145,23 +145,81 @@
   border-bottom-color: var(--powder-blue);
 }
 
-/* Standard project preview, currently used by Vacaciones */
+/* Shared project image container */
 
 .project-image {
+  background: #ffffff;
+  border: 1px solid rgba(38, 40, 36, 0.08);
+  border-radius: 12px;
+}
+
+/* Vacaciones screenshot gallery */
+
+/* Vacaciones screenshot gallery */
+
+.vacaciones-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+  padding: 1.5rem;
+
   overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(231, 207, 201, 0.2),
+      rgba(168, 196, 214, 0.12)
+    ),
+    #ffffff;
+}
+
+.vacaciones-screen {
+  width: 100%;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: #ffffff;
   border: 1px solid rgba(38, 40, 36, 0.08);
-  border-radius: 4px;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.project-image > img {
+.vacaciones-screen img {
   display: block;
 
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 190px;
 
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+
+  background: #ffffff;
+}
+
+.vacaciones-screen:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 28px rgba(38, 40, 36, 0.12);
+}
+
+/* Center the final screenshot */
+
+.vacaciones-screen-details {
+  grid-column: 1 / -1;
+
+  width: calc(50% - 0.5rem);
+  justify-self: center;
 }
 
 /* Chalk screenshot gallery */
@@ -184,8 +242,6 @@
       rgba(231, 207, 201, 0.16)
     ),
     #ffffff;
-
-  border-radius: 12px;
 }
 
 .chalk-screen {
@@ -210,7 +266,7 @@
   filter: drop-shadow(0 14px 18px rgba(38, 40, 36, 0.14));
 }
 
-/* Intentional staggering */
+/* Intentional Chalk staggering */
 
 .chalk-screen-landing {
   transform: translateY(22px);
@@ -236,8 +292,6 @@
   transform: translateX(50%) translateY(-12px);
 }
 
-/* Small, restrained hover effect */
-
 .chalk-screen:hover {
   position: relative;
   z-index: 2;
@@ -245,8 +299,6 @@
   transform: translateY(-8px) scale(1.04);
   filter: brightness(1.01);
 }
-
-/* Restore sensible hover movement for the bottom row */
 
 .chalk-screen-details:hover,
 .chalk-screen-saved:hover {
@@ -256,6 +308,11 @@
 @media (max-width: 1000px) {
   .project {
     gap: 4rem;
+  }
+
+  .vacaciones-gallery {
+    gap: 0.8rem;
+    padding: 1.25rem;
   }
 
   .chalk-gallery {
@@ -293,7 +350,9 @@
     max-width: 650px;
   }
 
+  .vacaciones-gallery,
   .chalk-gallery {
+    width: 100%;
     max-width: 650px;
     margin: 0 auto;
   }
@@ -314,6 +373,22 @@
 
   .project-tech {
     gap: 0.5rem;
+  }
+
+  .vacaciones-gallery {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .vacaciones-screen-landing,
+  .vacaciones-screen-details {
+    grid-column: auto;
+  }
+
+  .vacaciones-screen:hover {
+    transform: translateY(-3px) scale(1.01);
   }
 
   .chalk-gallery {
@@ -346,4 +421,4 @@
   .chalk-screen-saved:hover {
     transform: translateY(-5px) scale(1.02);
   }
-}y
+}
