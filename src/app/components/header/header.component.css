@@ -1,72 +1,62 @@
-.site-header{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
+.site-header {
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 2rem 4rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+
 }
 
 .brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+
   color: var(--ink);
+
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+
   text-decoration: none;
+
 }
 
-.brand-name {
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.18rem;
-  text-transform: uppercase;
-}
+.site-nav {
 
-.brand-title {
-  color: var(--muted-ink);
-  font-size: 0.7rem;
-  letter-spacing: 0.14rem;
-  text-transform: uppercase;
-}
-
-.site-navigation {
   display: flex;
   gap: 2rem;
+
 }
 
-.site-navigation a {
-  position: relative;
-  color: var(--ink);
-  font-size: 0.8rem;
+.site-nav a {
+
+  color: var(--muted-ink);
+
+  font-size: .9rem;
   text-decoration: none;
-  text-transform: uppercase;
+
+  transition: color .2s ease;
+
 }
 
-.site-navigation a::after {
-  position: absolute;
-  bottom: -0.4rem;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--seashell);
-  content: "";
-  transition: width 180ms ease;
+.site-nav a:hover {
+
+  color: var(--ink);
+
 }
 
-.site-navigation a:hover::after, .site-navigation a:focus-visible::after {
-  width: 100%;
-}
+@media (max-width: 600px) {
 
-@media (max-width: 720px) {
   .site-header {
-    align-items: flex-start;
-    padding: 1.5rem;
+
+    padding: 1.25rem;
+
   }
 
-  .site-navigation {
-    display: none;
+  .site-nav {
+
+    gap: 1rem;
+
   }
+
 }
